@@ -4,7 +4,6 @@ class IndexController extends ControllerBase {
 
 	public function indexAction() {
 		//TODO INIT BEFORE AFTER SETTINGS
-		//TODO create datatables
 		//TODO query builders
 		//TODO sql,orm,querybuilder
 	}
