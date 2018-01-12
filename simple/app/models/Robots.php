@@ -1,7 +1,6 @@
 <?php
-use Phalcon\Mvc\Model;
 
-class Robots extends Model {
+class Robots extends \Phalcon\Mvc\Model {
 
 	/**
 	 *
@@ -39,6 +38,8 @@ class Robots extends Model {
 	 * @Column(type="string", nullable=true)
 	 */
 	protected $date_created;
+
+
 
 	/**
 	 * Method to set the value of field id

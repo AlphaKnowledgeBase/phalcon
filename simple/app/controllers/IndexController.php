@@ -18,36 +18,36 @@ class IndexController extends ControllerBase {
 
 		//Query for a set of records that match the specified conditions
 		// How many robots are there?
-		$robots = Robots::find();
-		echo "There are ", count($robots), "\n";
+		$robots1 = Robots::find();
+		echo "There are ", count($robots1), "<br>";
 
 		// How many mechanical robots are there?
-		$robots = Robots::find(
+		$robots2 = Robots::find(
 			"type = 'mechanical'"
 		);
-		echo "There are ", count($robots), "\n";
+		echo "There are ", count($robots2), "<br>";
 
 		// Get and print virtual robots ordered by name
-		$robots = Robots::find(
+		$robots3 = Robots::find(
 			[
 				"type = 'virtual'",
 				"order" => "name",
 			]
 		);
-		foreach ($robots as $robot) {
-			echo $robot->name, "\n";
+		foreach ($robots3 as $robot) {
+			echo $robot->name, "<br>";
 		}
 
 		// Get first 100 virtual robots ordered by name
-		$robots = Robots::find(
+		$robots4 = Robots::find(
 			[
 				"type = 'virtual'",
 				"order" => "name",
 				"limit" => 100,
 			]
 		);
-		foreach ($robots as $robot) {
-			echo $robot->name, "\n";
+		foreach ($robots4 as $robot) {
+			echo $robot->name, "<br>";
 		}
 	}
 
@@ -91,11 +91,11 @@ class IndexController extends ControllerBase {
 		//Counts how many records match the specified conditions
 		// How many robots are there?
 		$number = Robots::count();
-		echo "There are ", $number, "\n";
+		echo "There are ", $number, "<br>";
 
 		// How many mechanical robots are there?
 		$number = Robots::count("type = 'mechanical'");
-		echo "There are ", $number, " mechanical robots\n";
+		echo "There are ", $number, " mechanical robots<br>";
 	}
 
 	/*-----====== SUM ======-----*/
@@ -113,7 +113,7 @@ class IndexController extends ControllerBase {
 				"column" => "price",
 			]
 		);
-		echo "The total price of robots is ", $sum, "\n";
+		echo "The total price of robots is ", $sum, "<br>";
 
 		// How much are mechanical robots?
 		$sum = Robots::sum(
@@ -122,7 +122,7 @@ class IndexController extends ControllerBase {
 				"column" => "price",
 			]
 		);
-		echo "The total price of mechanical robots is  ", $sum, "\n";
+		echo "The total price of mechanical robots is  ", $sum, "<br>";
 	}
 
 	/*-----====== AVARAGE ======-----*/
@@ -140,7 +140,7 @@ class IndexController extends ControllerBase {
 				"column" => "price",
 			]
 		);
-		echo "The average price is ", $average, "\n";
+		echo "The average price is ", $average, "<br>";
 
 		// What's the average price of mechanical robots?
 		$average = Robots::average(
@@ -149,7 +149,7 @@ class IndexController extends ControllerBase {
 				"column" => "price",
 			]
 		);
-		echo "The average price of mechanical robots is ", $average, "\n";
+		echo "The average price of mechanical robots is ", $average, "<br>";
 	}
 
 	/*-----====== MINIMIM ======-----*/
@@ -194,7 +194,7 @@ class IndexController extends ControllerBase {
 				"column" => "id",
 			]
 		);
-		echo "The maximum robot id is: ", $id, "\n";
+		echo "The maximum robot id is: ", $id, "<br>";
 
 		// What is the maximum id of mechanical robots?
 		$id = Robots::maximum(
@@ -203,6 +203,6 @@ class IndexController extends ControllerBase {
 				"column" => "id",
 			]
 		);
-		echo "The maximum robot id of mechanical robots is ", $id, "\n";
+		echo "The maximum robot id of mechanical robots is ", $id, "<br>";
 	}
 }
